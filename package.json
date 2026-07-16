@@ -1,0 +1,33 @@
+{
+  "name": "finish_future-career-ai",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node dist/server.cjs",
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --target=node22 --outfile=dist/server.cjs --external:express --external:vite --external:openai --external:dotenv",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "lucide-react": "^0.555.0",
+    "html2canvas": "1.4.1",
+    "openai": "^5.12.2",
+    "dotenv": "^17.2.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/express": "^5.0.3",
+    "@vitejs/plugin-react": "^5.0.0",
+    "esbuild": "^0.25.8",
+    "tsx": "^4.20.3",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
