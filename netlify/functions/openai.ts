@@ -167,7 +167,7 @@ export default async (request: Request) => {
   }
 
   const client = new OpenAI({ apiKey });
-  const model = process.env.OPENAI_MODEL || 'gpt-5.5-2026-04-23';
+  const model = process.env.OPENAI_MODEL || 'gpt-5.4-nano';
 
   try {
     if (body.action === 'career-recommendations') {
@@ -183,6 +183,7 @@ export default async (request: Request) => {
       ].join('\n');
       const response = await client.responses.create({
         model,
+        reasoning: { effort: 'low' },
         instructions: COMMON_SYSTEM,
         input: prompt,
         store: false,
@@ -208,6 +209,7 @@ export default async (request: Request) => {
       ].join('\n');
       const response = await client.responses.create({
         model,
+        reasoning: { effort: 'low' },
         instructions: COMMON_SYSTEM,
         input: prompt,
         tools: [{ type: 'web_search' }] as never,
@@ -266,6 +268,7 @@ export default async (request: Request) => {
 
     const response = await client.responses.create({
       model,
+      reasoning: { effort: 'low' },
       instructions,
       input: history as never,
       store: false,
