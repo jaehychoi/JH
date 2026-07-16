@@ -167,7 +167,7 @@ export default async (request: Request) => {
   }
 
   const client = new OpenAI({ apiKey });
-  const model = process.env.OPENAI_MODEL || 'gpt-5.6-luna';
+  const model = process.env.OPENAI_MODEL || 'gpt-5.5-2026-04-23';
 
   try {
     if (body.action === 'career-recommendations') {

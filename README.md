@@ -17,7 +17,7 @@ AI 호출은 `/.netlify/functions/openai`를 사용하므로 전체 기능 확�
 Netlify 사이트의 **Environment variables**에 다음 값을 설정한 뒤 재배포합니다.
 
 - `OPENAI_API_KEY`: 필수, 서버 전용 비밀값
-- `OPENAI_MODEL`: 선택, 기본값 `gpt-5.6-luna`
+- `OPENAI_MODEL`: 선택, 기본값 `gpt-5.5-2026-04-23`
 
 보호자 동의 증거는 브라우저 `sessionStorage`에 최대 12시간 유지되며, 각 AI 요청마다 서버가
 정책 버전, 동의 시각, 세션 ID를 다시 검증합니다. 동의를 철회하면 즉시 앱이 잠깁니다.
